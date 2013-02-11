@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" 
+"http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>Pizza</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script type = "text/javascript" >
+
+
+  $(document).ready(function(){
+    $('#prepBtn').click(function(){
+      $('#results').html('<p> This SUSHI will have: </p>'); 
+        var order='';
+      
+      $('input:checkbox:checked').each( function(){
+        order+=$(this).val() + '<br>';       
+      }); 
+      
+      $('input:radio:checked').each( function(){
+        order+=$(this).val(); 
+      });      
+      $('#results').append('<p>' + order +'</p>'); 
+      }); //end of click
+  }); //end of doc ready
+    </script>
+</head>
+<body>
+<form id="pizzaform" action="#">
+<table>
+<tr><td>Ingredients</td><td>outside</td></tr>
+<tr>
+<td><input type="checkbox" id="topping1" value="Crab" 
+name="toppingcheck">Crab</td>
+<td><input type="radio" name="crust" value="White Rice" 
+checked="checked" id="radio1">White Rice</td>
+</tr>
+<tr>
+<td><input type="checkbox" id="topping2" value="Avocado" 
+name="toppingcheck">Avocado</td>
+<td><input type="radio" name="crust" value="Brown Rice" 
+id="radio2" />Brown Rice</td>
+</tr>
+<tr>
+<td><input type="checkbox" id="topping3" value="Cucumber" 
+name="toppingcheck">Cucumber</td>
+<td><input type="radio" name="crust" value="Nori" id="radio3">Nori</td>
+</tr>
+<tr>
+<td><input type="checkbox" id="topping4" value="Eel" 
+name="toppingcheck">Eel</td>
+<td></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="topping5" value="Shrimp" 
+name="toppingcheck">shrimp</td>
+<td></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="topping6" value="tomato" 
+name="toppingcheck">tomato</td>
+<td></td>
+</tr>
+<tr>
+<td><input type="checkbox" id="topping7" value="Tuna" 
+name="toppingcheck">Tuna</td>
+<td></td>
+</tr>
+</table>
+
+<p><input type="button" id="prepBtn" name="prepBtn" value="Prep Sushi"></p>
+</form>
+<div id="results"></div>
+</body>
+</html>
